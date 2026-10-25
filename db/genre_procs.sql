@@ -1,0 +1,51 @@
+USE Filmz
+GO
+
+CREATE OR ALTER PROCEDURE createGenre
+    @Name NVARCHAR(150),
+    @IDGenre INT OUTPUT
+AS
+BEGIN
+    INSERT INTO Genre (Name) VALUES (@Name);
+    SET @IDGenre = SCOPE_IDENTITY();
+END
+GO
+
+CREATE OR ALTER PROCEDURE updateGenre
+    @IDGenre INT,
+    @Name NVARCHAR(150)
+AS
+BEGIN
+    UPDATE Genre SET Name = @Name WHERE IDGenre = @IDGenre;
+END
+GO
+
+CREATE OR ALTER PROCEDURE deleteGenre
+    @IDGenre INT
+AS
+BEGIN
+    DELETE FROM Genre WHERE IDGenre = @IDGenre;
+END
+GO
+
+CREATE OR ALTER PROCEDURE selectGenres
+AS
+BEGIN
+    SELECT * FROM Genre;
+END
+GO
+
+CREATE OR ALTER PROCEDURE selectGenre
+    @IDGenre INT
+AS
+BEGIN
+    SELECT * FROM Genre WHERE IDGenre = @IDGenre;
+END
+GO
+
+CREATE OR ALTER PROC deleteAllGenres
+AS
+BEGIN
+	DELETE FROM Genre
+END
+GO
