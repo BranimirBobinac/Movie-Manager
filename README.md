@@ -133,4 +133,4 @@ Change this password after your first login. New accounts created from the **Reg
 
 ## Author
 
-Branimir Bobinac
+* Branimir Bobinac
